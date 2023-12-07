@@ -14,7 +14,7 @@ const Search = ({ setUserData, setLoading }) => {
       const data = await res.json();
 
       if (data.message) {
-        return toast({
+        return Toast({
           title: "Error",
           description:
             data.message === "Not Found" ? "User not found" : data.message,
@@ -26,7 +26,7 @@ const Search = ({ setUserData, setLoading }) => {
       setUserData(data);
       addUserToLocalStorage(data, query);
     } catch (error) {
-      toast({
+      Toast({
         title: "Error",
         description: error.message,
         status: "error",

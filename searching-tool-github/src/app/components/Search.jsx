@@ -4,6 +4,8 @@ import { useState } from "react";
 
 const Search = ({ setUserData, setLoading }) => {
   const [query, setQuery] = useState("");
+  const toast = useToast();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!query) return;
@@ -14,7 +16,7 @@ const Search = ({ setUserData, setLoading }) => {
       const data = await res.json();
 
       if (data.message) {
-        return Toast({
+        return toast({
           title: "Error",
           description:
             data.message === "Not Found" ? "User not found" : data.message,
@@ -26,7 +28,7 @@ const Search = ({ setUserData, setLoading }) => {
       setUserData(data);
       addUserToLocalStorage(data, query);
     } catch (error) {
-      Toast({
+      toast({
         title: "Error",
         description: error.message,
         status: "error",

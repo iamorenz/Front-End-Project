@@ -21,10 +21,12 @@ const Repos = ({ reposUrl }) => {
         toast({
           title: "Error",
           description: error.message,
-          status: "error",
+          status: "Error",
           duration: 3000,
           isClosable: true,
         });
+      } finally {
+        setLoading(false);
       }
     };
 

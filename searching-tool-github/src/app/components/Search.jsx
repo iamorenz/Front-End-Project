@@ -1,5 +1,5 @@
 "use client";
-import { Button, Input, Toast, useToast } from "@chakra-ui/react";
+import { Button, Input, useToast } from "@chakra-ui/react";
 import { useState } from "react";
 
 const Search = ({ setUserData, setLoading }) => {

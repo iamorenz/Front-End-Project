@@ -2,11 +2,13 @@
 import React from "react";
 
 const Footer = () => {
-    return (
-        <div>
-            <h1>Footer</h1>
-        </div>
-    );
-}
+  return (
+    <div className="py-5 text-center">
+      <p className="text-sm mt-2  opacity-55">
+        &copy; {new Date().getFullYear()} Oren Zhu. All rights reserved.
+      </p>
+    </div>
+  );
+};
 
 export default Footer;
